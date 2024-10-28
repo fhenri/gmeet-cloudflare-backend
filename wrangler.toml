@@ -1,8 +1,11 @@
 #:schema node_modules/wrangler/config-schema.json
-name = "backend"
+name = "gmeet-cloudflare-backend"
 main = "src/index.ts"
 compatibility_date = "2024-10-11"
 compatibility_flags = ["nodejs_compat"]
+
+workers_dev = false
+route = { pattern = "*.cloud06.io/gmeet-api/*", zone_name = "cloud06.io" }
 
 # Workers Logs
 # Docs: https://developers.cloudflare.com/workers/observability/logs/workers-logs/
@@ -24,6 +27,9 @@ enabled = true
 # - https://developers.cloudflare.com/workers/configuration/secrets/
 # [vars]
 # MY_VARIABLE = "production_value"
+[vars]
+GOOGLE_PROJECT_ID="cloud06"
+GOOGLE_CLIENT_EMAIL="gmeet-736@cloud06.iam.gserviceaccount.com"
 
 # Bind the Workers AI model catalog. Run machine learning models, powered by serverless GPUs, on Cloudflare’s global network
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#workers-ai

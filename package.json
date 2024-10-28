@@ -15,5 +15,11 @@
     "typescript": "^5.5.2",
     "vitest": "2.0.5",
     "wrangler": "^3.60.3"
+  },
+  "dependencies": {
+    "@googleapis/calendar": "^9.7.9",
+    "date-fns": "^4.1.0",
+    "date-fns-tz": "^3.2.0",
+    "googleapis": "^144.0.0"
   }
 }
